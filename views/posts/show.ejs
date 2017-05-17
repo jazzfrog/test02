@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <div class="posts">
+      <% include partials/top %>
+
+      <!-- main start -->
+
+<div class="show">
+  <h3><%= data.title %></h3>
+  <div class="time">Created At <br>
+    <%= data.createdAt.toLocaleDateString() %> <br>
+    <%= data.createdAt.toLocaleTimeString() %>
+  </div>
+  <% if(data.updatedAt) { %>
+    <div class="time">Updated At <br>
+      <%= data.updatedAt.toLocaleDateString() %> <br>
+      <%= data.updatedAt.toLocaleTimeString() %>
+    </div>
+  <% } %>
+  <p class="body"><%= data.body %> <p>
+  <div class="tools">
+    <a href="/posts/<%= data._id %>/edit"><button>Edit</button></a>
+    <!-- delete button here -->
+    <form class="btn_del" action="/posts/<%= data._id %>?_method=delete" method="post">
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+  <a href="/posts"><button>Back to List</button></a>
+</div>
+
+      <!-- main end -->
+    </div>
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>
