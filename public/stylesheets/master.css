@@ -69,7 +69,7 @@ footer{
 }
 .posts .show .btn_delete{
   display:inline-block;
-
+  width: 265px;
 }
 .posts .show .tools{
   margin-bottom:20px;

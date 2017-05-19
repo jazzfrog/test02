@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <div class="login">
+      <% include ../users/partials/top %>
+
+      <!-- main start -->
+
+
+  <div>
+    <h3>Login</h3>
+    <form class="login_form" action="/login" method="post">
+      <label>Email</label><br>
+      <input type="text" name="email" value="<%= email %>"><p>
+      <label>Password</label><br>
+      <input type="text" name="password" value=""><p>
+      <% loginError.forEach(function(e){ %>
+         <p class = 'error_message'><%= e %><p>
+      <% }); %>
+      <button class="submit_btn" type="submit" style="width:150px;">Submit</button>
+    </form>
+    <a href="javascript:history.back()"><button style="width:150px;">Back</button></a>
+  </div>
+
+
+
+      <!-- main end -->
+    </div>
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>

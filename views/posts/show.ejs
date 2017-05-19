@@ -26,13 +26,13 @@
   <% } %>
   <p class="body"><%= data.body %> <p>
   <div class="tools">
-    <a href="/posts/<%= data._id %>/edit"><button>Edit</button></a>
+    <a href="/posts/<%= data._id %>/edit"><button style="width:150px;">Edit</button></a>
     <!-- delete button here -->
     <form class="btn_del" action="/posts/<%= data._id %>?_method=delete" method="post">
-      <button type="submit">Delete</button>
+      <button type="submit" style="width:150px;">Delete</button>
     </form>
   </div>
-  <a href="/posts"><button>Back to List</button></a>
+  <a href="/posts"><button  style="width:150px;">Back to List</button></a>
 </div>
 
       <!-- main end -->

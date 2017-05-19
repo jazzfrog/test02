@@ -13,7 +13,15 @@
       <!-- main start -->
 
 <div class="index">
-  <a href="/posts/new"><button>New</button></a>
+  <a href="/posts/new"><button style="width:150px;">New</button></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <% if(user) { %>
+    <a href="/logout" class="float_right"><button style="width:100px;">Logout</button><a>
+    <a href="/users/<%= user._id %>" class="float_right"><button style="width:150px;">My Profile(<%= user.nickname %>)</button></a>
+  <% } else { %>
+    <a href="/login" class="float_right"><button style="width:100px;">Login</button><a>
+    <a href="/users/new" class="float_right"><button style="width:150px;">Sign Up</button></a>
+  <% } %>
   <ul>
     <li class="header">Title<span>Date</span></li>
     <% data.forEach(function(e){ %>

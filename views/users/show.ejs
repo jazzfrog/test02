@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <div class="users">
+      <% include partials/top %>
+
+      <!-- main start -->
+
+<div class="show">
+  <h3>User Info</h3>
+  <div class="content">
+    <p class="user_info">Email<small> : <%= user.email %></small></p>
+    <p class="user_info">Nickname<small> : <%= user.nickname %></small></p>
+    <p class="user_info">Password<small> : <%= user.password %></small></p>
+  </div>
+
+  <div class="tools">
+    <a href="/users/<%= user._id %>/edit"><button style="width:150px;">Edit User</button></a>
+
+  </div>
+  <a href="/posts"><button  style="width:150px;">Back</button></a>
+</div>
+
+      <!-- main end -->
+    </div>
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+  </body>
+</html>
