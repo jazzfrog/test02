@@ -387,7 +387,7 @@ app.delete("/users/:id",function(req, res) {
   });
 });
 
-app.get("/userlist",function(req, res) {
+app.get("/users/:id/list",function(req, res) {
   User.find({}).sort('email').exec( function(err,users){
     if(err) return res.json({success:false, message:err});
     res.render("users/list",{data:users});
