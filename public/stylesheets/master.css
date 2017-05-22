@@ -94,3 +94,16 @@ footer{
   height: 100px;
   background-color: rgb(255, 255, 200);
 }
+
+
+.users{
+  max-width: 600px;
+  margin: 0 auto;
+}
+.users .list ul li{
+  padding: 4px;
+}
+.users .list ul li>span{
+  width: 120px;
+  float:right;
+}

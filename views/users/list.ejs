@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../partials/head %>
+  </head>
+  <body>
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <div class="users">
+      <% include partials/top %>
+
+      <!-- main start -->
+
+
+      <div class="list">
+        <a href="/users/new"><button style="width:150px;">New</button></a>
+        <ul>
+          <li class="header">Email<span>Created</span><span>Nickname</span></li>
+          <% data.forEach(function(e){ %>
+            <li>
+              <a href="/users/<%= e._id %>/edit" style="width:150px;">==>> &nbsp;<%= e.email %>&nbsp;</a>
+              <span ><%= e.createdAt.toLocaleDateString() %></span>
+              <span ><%= e.nickname %></span>
+            </li>
+          <% }); %>
+        </ul>
+        <a href="javascript:history.back()"><button style="width:150px;">Back</button></a><p>
+        <a href="/posts"><button style="width:150px;">Back to Board</button></a>
+      </div>
+
+      <!-- main end -->
+    </div>
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
